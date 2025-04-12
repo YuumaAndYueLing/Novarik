@@ -1,122 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NOVARIK</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Novarik Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
+      background-color: black;
+      color: white;
       font-family: 'Orbitron', sans-serif;
-      background-color: black;
       overflow: hidden;
-      color: #00ff88;
-    }
-
-    h1, p {
       margin: 0;
-    }
-
-    /* NOVARIK intro /
-    .intro-container {
-      position: absolute;
-      width: 100%;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
     }
 
-    .intro-container.show {
-      opacity: 1;
-    }
-
-    .intro-container.fade-out {
-      opacity: 0;
-    }
-
-    / LOADING /
-    .loading-screen {
+    #intro, #loading {
       position: absolute;
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-      color: #00ff88;
-      font-size: 2rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
       font-weight: bold;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
-    }
-
-    .loading-screen.show {
-      opacity: 1;
-    }
-
-    .loading-screen.hide {
-      opacity: 0;
-    }
-
-    / MAIN CONTENT */
-    .main-content {
-      opacity: 0;
-      padding-top: 150px;
-      text-align: center;
-      transition: opacity 1s ease-in-out;
-    }
-
-    .main-content.show {
-      opacity: 1;
-    }
-
-    .intro-text {
-      font-size: 1.2rem;
-      padding: 20px;
-    }
-
-    .social-links {
-      margin-top: 20px;
-    }
-
-    .social-links a {
       color: #00ff88;
-      text-decoration: none;
-      margin: 0 10px;
-      transition: color 0.3s;
+      text-shadow: 0 0 15px #00ff88;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    .social-links a:hover {
-      color: #66ffc2;
+    #main {
+      opacity: 0;
+      padding: 50px;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .show {
+      opacity: 1 !important;
+    }
+
+    .hide {
+      opacity: 0 !important;
     }
   </style>
 </head>
 <body>
 
-  <!-- NOVARIK intro -->
-  <div class="intro-container" id="intro">
-    <h1>NOVARIK</h1>
-  </div>
+  <div id="intro">Novarik</div>
+  <div id="loading">Loading<span id="dots"></span></div>
 
-  <!-- Loading animation -->
-  <div class="loading-screen" id="loading">
-    <p id="loading-text">Loading<span id="dots"></span></p>
-  </div>
-
-  <!-- Main site content -->
-  <div class="main-content" id="main">
-    <div class="intro-box">
-      <p class="intro-text">Together, we're united.</p>
-    </div>
-    <div class="social-links">
-      <a href="mailto:youremail@example.com">Email</a>
-      <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
-      <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
-    </div>
+  <div id="main">
+    <h1>Welcome to Novarik</h1>
+    <p>This is the beginning of something mysterious and powerful.</p>
+    <!-- You can add more content or sections below -->
   </div>
 
   <script>
@@ -128,34 +63,35 @@
     let dotCount = 0;
     let loadingInterval;
 
-    // Step 1: Show NOVARIK
+    // 1. Show NOVARIK
     setTimeout(() => {
       intro.classList.add('show');
     }, 500);
 
-    // Step 2: Fade out NOVARIK
+    // 2. Hide NOVARIK
     setTimeout(() => {
-      intro.classList.add('fade-out');
+      intro.classList.remove('show');
     }, 3000);
 
-    // Step 3: Show loading + blinking dots
+    // 3. Show Loading
     setTimeout(() => {
       loading.classList.add('show');
-
       loadingInterval = setInterval(() => {
         dotCount = (dotCount + 1) % 4;
         dots.textContent = '.'.repeat(dotCount);
       }, 500);
     }, 4000);
 
-    // Step 4: Hide loading, show main content
+    // 4. Hide Loading
     setTimeout(() => {
       loading.classList.remove('show');
-      loading.classList.add('hide');
       clearInterval(loadingInterval);
-      main.classList.add('show');
     }, 6500);
-  </script>
 
+    // 5. Show Main Content
+    setTimeout(() => {
+      main.classList.add('show');
+    }, 7500);
+  </script>
 </body>
 </html>
