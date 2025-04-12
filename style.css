@@ -54,4 +54,23 @@
   background-color: black;
 }
 
+.fade-up {
+  font-size: 48px;
+  font-family: 'Orbitron', sans-serif; /* Example of a cyber font */
+  color: #00ff88;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 2s ease-out forwards;
+  text-align: center;
+}
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
