@@ -27,9 +27,11 @@
       align-items: center;
       background-color: black;
       color: #00ff88;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
     }
 
     .loading-screen.show {
