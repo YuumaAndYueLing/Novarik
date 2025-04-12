@@ -13,6 +13,7 @@
       transition: background-color 2s ease-in-out;
     }
 
+/*
     .intro-container {
       position: absolute;
       width: 100%;
@@ -37,7 +38,7 @@
       justify-content: start;
       padding-left: 40px;
     }
-
+*/
     .main-content {
       opacity: 0;
       padding-top: 150px;
@@ -48,14 +49,216 @@
     .main-content.show {
       opacity: 1;
     }
+
+
+
+    
+
+.header {
+  position: abolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  font-size: 100px;
+  z-index: -1;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #101010;
+  animation: slide-out-container 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.8s;
+  animation-fill-mode: foward;
+}
+
+.text-wrapper{
+  color: #00cc44;
+  position: absolute;
+}
+.text{
+  font-family: "Monument Extend";
+  font-weight: lighter;
+  font-size: 54px;
+}
+    
+.text-1, .text-3, .text-4, .text-8 , .text-9, .text-11 {
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1px white;
+}
+
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 0%;
+    }
+    1% {
+        opacity: 100%;
+    }
+    99% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.text-1 {
+    animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+    opacity: 0;
+}
+
+.text-2 {
+    animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+    opacity: 0;
+}
+
+.text-3 {
+    animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+    opacity: 0;
+}
+
+.text-4 {
+    animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+    opacity: 0;
+}
+
+.text-5 {
+    animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+    opacity: 0;
+}
+
+.text-6 {
+    animation: blink 0.8s linear 0.4s, blink 0.8s linear 2.5s, slide-out 1s linear 3.2s;
+    opacity: 0;
+}
+
+.text-7 {
+    animation: blink 0.8s linear 0.5s, blink 0.8s linear 2.4s;
+    opacity: 0;
+}
+
+.text-8 {
+    animation: blink 0.8s linear 0.6s, blink 0.8s linear 2.3s;
+    opacity: 0;
+}
+
+.text-9 {
+    animation: blink 0.8s linear 0.7s, blink 0.8s linear 2.2s;
+    opacity: 0;
+}
+
+.text-10 {
+    animation: blink 0.8s linear 0.8s, blink 0.8s linear 2.1s;
+    opacity: 0;
+}
+
+.text-11 {
+    animation: blink 0.8s linear 0.9s, blink 0.8s linear 2s;
+    opacity: 0;
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 0%;
+    }
+    1% {
+        opacity: 100%;
+    }
+
+    19% {
+        opacity: 100%;
+    }
+    20% {
+        opacity: 0%;
+    }
+
+    39% {
+        opacity: 0%;
+    }
+    40% {
+        opacity: 100%;
+    }
+
+    59% {
+        opacity: 100%;
+    }
+    60% {
+        opacity: 0%;
+    }
+
+    79% {
+        opacity: 0%;
+    }
+    80% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide-out-container {
+    0% {
+        height: 100vh;
+    }
+
+    40% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+@media (max-width: 990px) {
+    .header {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 24px;
+    }
+
+    
+    
   </style>
 </head>
 <body>
 
+  <!--
   <div class="intro-container" id="intro">
     <h1>NOVARIK</h1>
   </div>
+-->
 
+<div class ="header"> NOVARIK id="intro" </div>
+  <div class="container">
+    <div calss="text-wrapper">
+      <div clas="text-1 text"> United </div>
+      <div clas="text-2 text"> United </div>
+      <div clas="text-3 text"> United </div>
+      <div clas="text-4 text"> United </div>
+      <div clas="text-5 text"> United </div>
+      <div clas="text-6 text"> United </div>
+      <div clas="text-7 text"> United </div>
+      <div clas="text-8 text"> United </div>
+      <div clas="text-9 text"> United </div>
+      <div clas="text-10 text"> United </div>
+      <div clas="text-11 text"> United </div>
+
+
+
+
+    
   <div class="main-content" id="main">
     <p>Yuuma & Yue Ling</p>
     <p>Links | Email | Portfolio</p>
