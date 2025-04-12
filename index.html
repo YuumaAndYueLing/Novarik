@@ -76,10 +76,13 @@
     // 3. Show Loading
     setTimeout(() => {
       loading.classList.add('show');
-      loadingInterval = setInterval(() => {
-        dotCount = (dotCount + 2) % 4;
-        dots.textContent = '.'.repeat(dotCount);
-      }, 500);
+      const dotPatterns = ['', '.', '..', '.', '', '.', '..', '.', ''];
+let dotIndex = 0;
+
+loadingInterval = setInterval(() => {
+  dots.textContent = dotPatterns[dotIndex];
+  dotIndex = (dotIndex + 1) % dotPatterns.length;
+}, 300);
     }, 4000);
 
     // 4. Hide Loading
