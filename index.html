@@ -22,20 +22,15 @@
       align-items: center;
       transition: all 1s ease-in-out;
       opacity: 0;
-      transform: scale(1);
     }
 
     .intro-container.show {
       opacity: 1;
     }
 
-    .intro-container.shrink {
-      top: 0;
-      height: 100px;
-      transform: scale(0.5) translateY(-200px);
-      position: fixed;
-      justify-content: start;
-      padding-left: 40px;
+    .intro-container.fade-out {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
     .main-content {
@@ -65,15 +60,15 @@
     const intro = document.getElementById('intro');
     const main = document.getElementById('main');
 
-    // Step 1: Show intro
+    // Step 1: Fade in NOVARIK
     setTimeout(() => {
       intro.classList.add('show');
     }, 500);
 
-    // Step 2: Change background and shrink intro to header
+    // Step 2: Fade out NOVARIK
     setTimeout(() => {
       document.body.style.backgroundColor = "#101010";
-      intro.classList.add('shrink');
+      intro.classList.add('fade-out');
     }, 3000);
 
     // Step 3: Show main content
