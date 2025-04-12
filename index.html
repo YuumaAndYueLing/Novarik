@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css" />
   <title>NOVARIK</title>
   <style>
     body {
@@ -11,7 +10,6 @@
       background-color: black;
       overflow: hidden;
       color: #00ff88;
-      transition: background-color 2s ease-in-out;
     }
 
     h1, p {
@@ -48,9 +46,11 @@
       align-items: center;
       background-color: black;
       color: #00ff88;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: bold;
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      text-shadow: 0 0 8px #00ff88, 0 0 16px #00ff88;
     }
 
     .loading-screen.show {
@@ -135,7 +135,6 @@
 
     // Step 2: Fade out NOVARIK
     setTimeout(() => {
-      document.body.style.backgroundColor = "#101010";
       intro.classList.add('fade-out');
     }, 3000);
 
